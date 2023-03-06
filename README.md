@@ -1,5 +1,4 @@
-# Streamlit_ch_2
-# Challenge 2: Demo’ing Editable Dataframes
+# Streamlit_Challenge 2: Demo’ing Editable Dataframes
 
 This challenge is focused on building and sharing apps that use one st.experimental_data_editor!
 
