@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.DataFrame(NYC_most_pop.csv)
+df = pd.read_csv(NYC_most_pop.csv)
 
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
