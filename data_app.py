@@ -24,7 +24,6 @@ st.write('You selected:', option)
 
 #Drop box
 if st.selectbox == ('Default dataset'):
-    st.file_uploader(label_visibility)
-    label_visibility=st.session_state.visibility, disabled=st.session_state.disabled
+    st.file_uploader(label_visibility=st.session_state.hidden)
 else :
    st.file_uploader("Select CSV file to upload", type=["csv"])
