@@ -11,12 +11,12 @@ file_path1 = pd.read_csv("NYC_most_pop.csv")
 
 #Data cache
 @st.cache_data()
-def load_data(file_path1):
+def load_data1(file_path1):
     default_data = pd.read_csv(file_path1)
     return default_data
 
 @st.cache_data()
-def load_data(file_path2):
+def load_data2(file_path2):
     uploaded_data = pd.read_csv(file_path2)
     return uploaded_data
 
@@ -32,14 +32,14 @@ if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Progress bar
-progress_text = "Uploading in progress. Please wait."
+#progress_text = "Uploading in progress. Please wait."
 
 #if 
-my_bar = st.progress(0, text=progress_text)
+#my_bar = st.progress(0, text=progress_text)
 
-for percent_complete in range(100):
-    time.sleep(0.1)
-    my_bar.progress(percent_complete + 1, text=progress_text)
+#for percent_complete in range(100):
+    #time.sleep(0.1)
+    #my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
 df= [default_data],[uploaded_data]
