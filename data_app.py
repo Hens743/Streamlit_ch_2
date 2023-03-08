@@ -24,9 +24,8 @@ option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 
 #Drop box
 if st.selectbox ('Upload dataset'):
-    label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled,
-        )
+    label_visibility=st.session_state.visibility,disabled=st.session_state.disabled)
+    
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 if file_path:
