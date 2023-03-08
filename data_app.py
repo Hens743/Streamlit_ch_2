@@ -25,7 +25,7 @@ option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
 if option == 'Upload dataset':
-    st.file_uploader("Select CSV file to upload", type=["csv"])
+    file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Paths
 file_path1 = pd.read_csv("NYC_most_pop.csv")
