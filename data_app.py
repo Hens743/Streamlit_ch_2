@@ -17,7 +17,7 @@ st.header('Dataframes editor app')
 
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 st.markdown ('Choose default dataset or Upload dataset')
-
+file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 if file_path:
     dataset = load_data(file_path)
     top_menu = st.columns(3)
@@ -30,7 +30,7 @@ if file_path:
             sort_direction = st.radio("Direction", options=["⬆️", "⬇️"], horizontal=True)
         dataset = dataset.sort_values(by=sort_field, ascending=sort_direction == "⬆️", ignore_index=True)
         
-file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
+
 
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
