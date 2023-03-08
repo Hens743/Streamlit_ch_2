@@ -16,10 +16,7 @@ def load_data(file_path2):
 st.header('Dataframes editor app')
 
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
-option = st.selectbox(
-    'How would you like to be contacted?',
-    ('Email', 'Home phone', 'Mobile phone'))
-
+option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
