@@ -19,7 +19,7 @@ def load_data(file_path2):
 st.header('Dataframes editor app')
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 
-option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
+#option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 #st.write('You selected:', option)
 
 #Drop box
@@ -27,9 +27,9 @@ if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
     st.session_state.disabled = False
 
-if option:
-    st.selectbox ('Select dataset',('Default dataset', 'Upload dataset'),
-        label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
+if st.selectbox == ('Default dataset'):
+    st.file_uploader(disabled)
+    label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
 
 #if upload:
    
