@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time
 
 #App config
 st.set_page_config(layout="centered")
@@ -29,6 +30,14 @@ st.write('You selected:', option)
 
 if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
+
+#Progress bar
+progress_text = "Operation in progress. Please wait."
+my_bar = st.progress(0, text=progress_text)
+
+for percent_complete in range(100):
+    time.sleep(0.1)
+    my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
 df= [default_data,uploaded_data]
