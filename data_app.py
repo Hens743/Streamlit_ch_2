@@ -27,8 +27,8 @@ if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
     st.session_state.disabled = False
 
-if default:
-    option = st.selectbox ('Select dataset',('Default dataset', 'Upload dataset'),
+if option:
+    st.selectbox ('Select dataset',('Default dataset', 'Upload dataset'),
         label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
 
 #if upload:
