@@ -29,7 +29,7 @@ if option == 'Upload dataset':
 
 #Paths
 file_path1 = pd.read_csv("NYC_most_pop.csv")
-file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
+#file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Progress bar
 #progress_text = "Uploading in progress. Please wait."
