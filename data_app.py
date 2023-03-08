@@ -16,8 +16,14 @@ def load_data(file_path2):
 st.header('Dataframes editor app')
 
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
-st.markdown ('Choose default dataset or Upload dataset')
+option = st.selectbox(
+    'How would you like to be contacted?',
+    ('Email', 'Home phone', 'Mobile phone'))
+
+st.write('You selected:', option)
+
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
+
 if file_path:
     dataset = load_data(file_path)
     top_menu = st.columns(3)
@@ -29,11 +35,8 @@ if file_path:
         with top_menu[2]:
             sort_direction = st.radio("Direction", options=["⬆️", "⬇️"], horizontal=True)
         dataset = dataset.sort_values(by=sort_field, ascending=sort_direction == "⬆️", ignore_index=True)
-        
-
 
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
-
