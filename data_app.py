@@ -10,7 +10,7 @@ def load_data(file_path):
   
 st.header('Editable dataframes with st.experimental_data_editor (Streamlit 1.19)')
 
-st.experimental_data_editor(df, num_rows="dynamic")
+#st.experimental_data_editor(df, num_rows="dynamic")
 
 #favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 
