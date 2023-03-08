@@ -18,8 +18,6 @@ st.header('Dataframes editor app')
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 st.markdown ('Choose default dataset or Upload dataset')
 
-file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
-
 if file_path:
     dataset = load_data(file_path)
     top_menu = st.columns(3)
