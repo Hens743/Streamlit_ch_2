@@ -28,8 +28,8 @@ if "visibility" not in st.session_state:
     st.session_state.disabled = False
 
 if st.selectbox == ('Default dataset'):
-    st.file_uploader(disabled)
-    label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
+    #st.file_uploader(disabled)
+    label_visibility=st.session_state.visibility, disabled=st.session_state.disabled
 
 #if upload:
    
