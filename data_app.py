@@ -27,25 +27,3 @@ if st.selectbox == ('Default dataset'):
     st.file_uploader(label_visibility)
     label_visibility=st.session_state.visibility, disabled=st.session_state.disabled
 
-#if upload:
-   
-#####
-file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
-
-if file_path:
-    dataset = load_data(file_path)
-    top_menu = st.columns(3)
-    with top_menu[0]:
-        default = st.radio("Default dataset", options=["Yes", "No"], horizontal=1, index=1)
-    if default == "Yes":
-        with top_menu[1]:
-            sort_field = st.selectbox("Sort By", options=dataset.columns)
-        with top_menu[2]:
-            sort_direction = st.radio("Direction", options=["⬆️", "⬇️"], horizontal=True)
-        dataset = dataset.sort_values(by=sort_field, ascending=sort_direction == "⬆️", ignore_index=True)
-        
-#Editable dataset
-edited_df = st.experimental_data_editor(df, num_rows="dynamic")
-
-favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
-st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
