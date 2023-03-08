@@ -13,6 +13,9 @@ st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
+if file_path:
+    dataset = load_data(file_path)
+    
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
