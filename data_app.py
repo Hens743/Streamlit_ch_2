@@ -7,7 +7,7 @@ st.set_page_config(layout="centered")
 
 #Paths
 file_path1 = pd.read_csv("NYC_most_pop.csv")
-file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
+#file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Data cache
 @st.cache_data()
@@ -32,7 +32,9 @@ if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Progress bar
-progress_text = "Operation in progress. Please wait."
+progress_text = "Uploading in progress. Please wait."
+
+#if 
 my_bar = st.progress(0, text=progress_text)
 
 for percent_complete in range(100):
@@ -40,7 +42,7 @@ for percent_complete in range(100):
     my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
-df= [default_data,uploaded_data]
+df= ['default_data','uploaded_data']
 st.experimental_data_editor(df, num_rows="dynamic")
 
 #favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
