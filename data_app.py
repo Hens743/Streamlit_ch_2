@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(layout="centered")
 
 @st.cache_data()
 def load_data(file_path):
