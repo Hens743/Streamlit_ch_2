@@ -4,18 +4,22 @@ import pandas as pd
 st.set_page_config(layout="centered")
 
 @st.cache_data()
-def load_data(file_path):
-    df = pd.read_csv(file_path)
-    return df
-  
-st.header('Dataframes editor app')
-st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
+def load_data(file_path1):
+    df1 = pd.read_csv(file_path1)
+    return df1
 
+@st.cache_data()
+def load_data(file_path2):
+    df2 = pd.read_csv(file_path2)
+    return df2
+
+st.header('Dataframes editor app')
+
+st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
+st.markdown ('Choose dataset' or 'Upload dataset')
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
-df1 = df
-    
-edited_df = st.experimental_data_editor(df1, num_rows="dynamic")
+edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
