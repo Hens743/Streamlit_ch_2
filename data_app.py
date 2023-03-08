@@ -14,7 +14,7 @@ st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 if file_path:
-    dataset = load_data(file_path)
+    df = load_data(file_path)
     
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
