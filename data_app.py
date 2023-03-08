@@ -16,7 +16,7 @@ def load_data(file_path2):
 st.header('Dataframes editor app')
 
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
-st.markdown ('Choose dataset' or 'Upload dataset')
+st.markdown ('Choose dataset or Upload dataset')
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
