@@ -23,7 +23,5 @@ option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
 #Drop box
-if option == 'Default dataset':
-   st.file_uploader(label_visibility="hidden")
-else :
+if option == 'Upload dataset':
    st.file_uploader("Select CSV file to upload", type=["csv"])
