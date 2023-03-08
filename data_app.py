@@ -31,7 +31,7 @@ with default:
     option = st.selectbox ('Select dataset',('Default dataset', 'Upload dataset'),
         label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
 
-if upload:
+#if upload:
    
 #####
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
