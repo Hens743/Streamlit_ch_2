@@ -42,5 +42,5 @@ file_path1 = pd.read_csv("NYC_most_pop.csv")
     #my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
-df= ['load_data1','load_data2']
+df= ['load_data1']
 st.experimental_data_editor(df, num_rows="dynamic")
