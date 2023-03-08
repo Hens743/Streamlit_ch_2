@@ -26,5 +26,5 @@ st.write('You selected:', option)
 if st.selectbox == ('Default dataset'):
     st.file_uploader(label_visibility)
     label_visibility=st.session_state.visibility, disabled=st.session_state.disabled
-else
+else :
    st.file_uploader("Select CSV file to upload", type=["csv"])
