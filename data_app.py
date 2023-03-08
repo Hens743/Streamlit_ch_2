@@ -42,7 +42,7 @@ for percent_complete in range(100):
     my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
-df= ['default_data','uploaded_data']
+df= [default_data],[uploaded_data]
 st.experimental_data_editor(df, num_rows="dynamic")
 
 #favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
