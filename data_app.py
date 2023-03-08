@@ -24,4 +24,5 @@ st.write('You selected:', option)
 
 #Drop box
 if option == 'Upload dataset':
-   st.file_uploader("Select CSV file to upload", type=["csv"])
+    st.file_uploader("Select CSV file to upload", type=["csv"])
+
