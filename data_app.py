@@ -33,7 +33,7 @@ with default:
 
 if upload:
    
-"""-----------------------------"""
+#####
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 if file_path:
