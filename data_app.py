@@ -5,10 +5,6 @@ import time
 #App config
 st.set_page_config(layout="centered")
 
-#Paths
-file_path1 = pd.read_csv("NYC_most_pop.csv")
-#file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
-
 #Data cache
 @st.cache_data()
 def load_data1(file_path1):
@@ -21,7 +17,7 @@ def load_data2(file_path2):
     return uploaded_data
 
 #Titles
-st.header('Dataframes editor app')
+st.header('Dataframes editor Web App')
 st.markdown ('Made with: Streamlit 1.19 - st.experimental_data_editor')
 
 #Drop box
@@ -30,6 +26,10 @@ st.write('You selected:', option)
 
 if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
+
+#Paths
+file_path1 = pd.read_csv("NYC_most_pop.csv")
+file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Progress bar
 #progress_text = "Uploading in progress. Please wait."
@@ -42,8 +42,5 @@ if option == 'Upload dataset':
     #my_bar.progress(percent_complete + 1, text=progress_text)
 
 #Editable dataset
-df= [default_data],[uploaded_data]
+df= [load_data1,load_data2]
 st.experimental_data_editor(df, num_rows="dynamic")
-
-#favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
-#st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
