@@ -19,13 +19,21 @@ def load_data(file_path2):
 st.header('Dataframes editor app')
 st.markdown ('Streamlit 1.19 - st.experimental_data_editor')
 
-option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
+#option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 #st.write('You selected:', option)
 
 #Drop box
-if option ('Upload dataset'):
-    label_visibility=st.session_state.visibility,disabled=st.session_state.disabled
-    
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
+
+with default:
+    option = st.selectbox ('Select dataset',('Default dataset', 'Upload dataset'),
+        label_visibility=st.session_state.visibility, disabled=st.session_state.disabled,)
+
+if upload:
+   
+"""-----------------------------"""
 file_path = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 if file_path:
@@ -39,7 +47,8 @@ if file_path:
         with top_menu[2]:
             sort_direction = st.radio("Direction", options=["⬆️", "⬇️"], horizontal=True)
         dataset = dataset.sort_values(by=sort_field, ascending=sort_direction == "⬆️", ignore_index=True)
-
+        
+#Editable dataset
 edited_df = st.experimental_data_editor(df, num_rows="dynamic")
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
