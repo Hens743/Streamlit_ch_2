@@ -20,16 +20,19 @@ def load_data2(file_path2):
 st.header('Editable dataframes')
 st.markdown ('Made with: Streamlit 1.19 - st.experimental_data_editor')
 
+#Paths
+file_path1 = pd.read_csv("NYC_most_pop.csv")
+#file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
+
 #Drop box
 option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
+if option == 'Default dataset':
+    st.experimental_data_editor(load_data1, num_rows="dynamic")
+
 if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
-
-#Paths
-file_path1 = pd.read_csv("NYC_most_pop.csv")
-#file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Progress bar
 #progress_text = "Uploading in progress. Please wait."
