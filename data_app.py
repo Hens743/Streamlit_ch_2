@@ -23,14 +23,7 @@ st.markdown ('Made with: Streamlit 1.19 - st.experimental_data_editor')
 #Paths
 
 #file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
-df= def load_data(url):
-    df = pd.read_csv(url)  # 👈 Download the data
-    return df
 
-df = load_data("https://github.com/plotly/datasets/raw/master/uber-rides-data1.csv")
-st.dataframe(df)
-
-st.button("Rerun")
 #Drop box
 option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
