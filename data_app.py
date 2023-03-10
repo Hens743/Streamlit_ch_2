@@ -29,7 +29,7 @@ option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
 if option == 'Default dataset':
-    st.experimental_data_editor(file_path1, num_rows="dynamic")
+    st.experimental_data_editor(default_data, num_rows="dynamic")
 
 if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
