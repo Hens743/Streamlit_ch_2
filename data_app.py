@@ -17,7 +17,7 @@ def load_data2(file_path2):
     return uploaded_data
 
 #Titles
-st.header('Dataframes editor Web App')
+st.header('Editable dataframes')
 st.markdown ('Made with: Streamlit 1.19 - st.experimental_data_editor')
 
 #Drop box
