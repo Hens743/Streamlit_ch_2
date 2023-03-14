@@ -33,6 +33,20 @@ if option == 'Default dataset':
 
 if option == 'Upload dataset':
     st.file_uploader("Select CSV file to upload", type=["csv"])
+    
+# Multiple files
+#for f in uploaded_files:
+    #st.write(f)
+    
+#st.header('Multiple File Upload')
+#uploaded_files = st.file_uploader('Upload your files', accept_multiple_files=True)
+    
+#data_list = []
+#for f in uploaded_files:
+    #data = pd.read_csv(f)
+    #data_list.append(data)
+
+#df = pd.concat(data_list)
 
 #Progress bar
 #progress_text = "Uploading in progress. Please wait."
