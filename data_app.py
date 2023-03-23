@@ -41,12 +41,14 @@ else:
 
 # Show/hide uploading box
 if file_path2 is not None:
-    st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
+    data = load_data2(file_path2)
+    st.experimental_data_editor(data, num_rows="dynamic")
+    csv = convert_df(data)
     
 elif option == 'Default dataset':
-    st.experimental_data_editor(load_data1("NYC_most_pop.csv"), num_rows="dynamic")
-    
-csv = convert_df(data)
+    data = load_data1("NYC_most_pop.csv")
+    st.experimental_data_editor(data, num_rows="dynamic")
+    csv = convert_df(data)
 
 # Download box
 st.download_button(
