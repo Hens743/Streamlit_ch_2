@@ -24,7 +24,9 @@ def convert_df(df):
 st.header('Editable dataframes')
 st.markdown ('Made with: Streamlit 1.20 - st.experimental_data_editor')
 
-
+#Paths
+file_path1 = "NYC_most_pop.csv"
+file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
 
 #Drop box
 option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
@@ -40,9 +42,7 @@ if option == 'Upload dataset':
         data = load_data2(file_path2)
         st.experimental_data_editor(data, num_rows="dynamic")
         csv = convert_df(data)
-#Paths
-file_path1 = "NYC_most_pop.csv"
-file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
+
 #Download box
 st.download_button(
     label="Download data as CSV",
