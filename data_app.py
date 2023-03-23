@@ -7,7 +7,6 @@ from PIL import Image
 st.set_page_config(layout="wide")
 
 # Picture
-#image = Image.open('streamlit_hero.jpg')
 image = Image.open('Streamlit.png')
 st.image(image,width=200)
 
@@ -47,7 +46,7 @@ if file_path2 is not None:
 elif option == 'Default dataset':
     st.experimental_data_editor(load_data1("NYC_most_pop.csv"), num_rows="dynamic")
     
-csv = convert_df()
+csv = convert_df(data)
 
 # Download box
 st.download_button(
