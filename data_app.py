@@ -41,12 +41,12 @@ elif option == 'Default dataset':
     st.experimental_data_editor(load_data1("NYC_most_pop.csv"), num_rows="dynamic")
 
 # Download box
-csv = convert_df(df)
+#csv = convert_df(df)
 
-st.download_button(
-    label="Download data as CSV",
-    data=csv,
-    file_name='Your_data.csv',
-    mime='text/csv',
+#st.download_button(
+    #label="Download data as CSV",
+    #data=csv,
+    #file_name='Your_data.csv',
+    #mime='text/csv',
 )
 
