@@ -58,5 +58,6 @@ st.download_button(
     label="Download data as CSV",
     data=csv,
     file_name='Your_data.csv',
-    mime='text/csv',)
+    mime='text/csv',
+)
 
