@@ -24,7 +24,7 @@ def load_data2(file_path2):
 
 @st.cache_resource()
 def convert_df(df):
-    return df.to_csv().encode('utf-8')
+    return df.to_csv(data).encode('utf-8')
 
 # Titles
 st.title('Editable Dataframes')
@@ -43,13 +43,9 @@ else:
 # Show/hide uploading box
 if file_path2 is not None:
     st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
-    #data = load_data2(file_path2)
-    #csv = convert_df(file_path2)#
     
 elif option == 'Default dataset':
     st.experimental_data_editor(load_data1("NYC_most_pop.csv"), num_rows="dynamic")
-    #data = load_data1(file_path1)
-    #csv = convert_df("NYC_most_pop.csv")#
     
 # Download box
 st.download_button(
