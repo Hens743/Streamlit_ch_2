@@ -1,6 +1,6 @@
 # Editable Dataframes
 
-A web app to fill missing values in datasets. Find the project at #
+A web app to fill missing values in datasets. See the project by clicking on thie Streamlit link :
 >[![Editable Dataframes.streamlit.app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit_ch_2.streamlit.app)
 
 This "Streamlit_challenge 2: Demo’ing Editable Dataframes" is focused on building and sharing apps that use the st.experimental_data_editor widget.
