@@ -42,7 +42,7 @@ else:
 
 # Show/hide uploading box
 if file_path2 is not None:
-   st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
+    st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
     data = load_data2(file_path2)#
     csv = convert_df(data)#
     
