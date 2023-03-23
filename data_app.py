@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 import time
+from PIL import Image
 
 # App config
 st.set_page_config(layout="wide")
 
 # Picture
-from PIL import Image
 image = Image.open('Streamlit.png')
+st.image(image)
 
 # Data cache
 @st.cache_data()
@@ -26,7 +27,7 @@ def convert_df(df):
 
 # Titles
 st.title('Editable Dataframes')
-st.markdown('Upload, Edit and Download dataframe')
+st.markdown('Upload, Edit and Download datasets')
 
 # Select box
 option = st.selectbox('Select dataset', ('Default dataset', 'Upload dataset'))
