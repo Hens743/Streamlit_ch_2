@@ -7,7 +7,7 @@ from PIL import Image
 st.set_page_config(layout="wide")
 
 # Picture
-image = Image.open('Streamlit.png')
+image = Image.open('streamlit_hero.jpg')
 st.image(image)
 
 # Data cache
