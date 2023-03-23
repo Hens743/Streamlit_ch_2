@@ -52,7 +52,7 @@ elif option == 'Default dataset':
     csv = convert_df("NYC_most_pop.csv")#
     
 # Download box
-csv = convert_df(df)
+#csv = convert_df(df)
 
 st.download_button(
     label="Download data as CSV",
