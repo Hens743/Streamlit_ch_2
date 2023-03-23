@@ -18,7 +18,7 @@ def load_data2(file_path2):
 
 #Titles
 st.header('Editable dataframes')
-st.markdown ('Made with: Streamlit 1.19 - st.experimental_data_editor')
+st.markdown ('Made with: Streamlit 1.20 - st.experimental_data_editor')
 
 #Paths
 
