@@ -5,6 +5,10 @@ import time
 # App config
 st.set_page_config(layout="wide")
 
+# Picture
+from PIL import Image
+image = Image.open('streamlit.jpg')
+
 # Data cache
 @st.cache_data()
 def load_data1(file_path1):
