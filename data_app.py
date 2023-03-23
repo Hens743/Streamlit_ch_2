@@ -16,7 +16,7 @@ def load_data2(file_path2):
     uploaded_data = pd.read_csv(file_path2)
     return uploaded_data
 
-@st.cache_data()
+@st.cache_resource()
 def convert_df(df):
     return df.to_csv().encode('utf-8')
 
@@ -40,7 +40,7 @@ if option == 'Upload dataset':
         st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
 
 #Download box
-csv = convert_df(Your_data)
+csv = convert_df(df)
 
 st.download_button(
     label="Download data as CSV",
