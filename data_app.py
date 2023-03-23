@@ -22,7 +22,7 @@ def convert_df(df):
 
 # Titles
 st.title('Editable Dataframes')
-st.markdown('Made with: Streamlit 1.20 - st.experimental_data_editor')
+st.markdown('Upload, Edit and Download dataframe')
 
 # Select box
 option = st.selectbox('Select dataset', ('Default dataset', 'Upload dataset'))
