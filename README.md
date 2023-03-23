@@ -9,3 +9,4 @@ This "Streamlit_challenge 2: Demo’ing Editable Dataframes" is focused on build
 > 
 > pip install streamlit --upgrade 
 > or the package manager of your choice to be able to use this widget.
+> [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://<your-custom-subdomain>.streamlit.app)
