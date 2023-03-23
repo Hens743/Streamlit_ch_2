@@ -40,7 +40,7 @@ if option == 'Upload dataset':
         st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
 
 #Download box
-csv = convert_df(Your_data_df)
+csv = convert_df(Your_data)
 
 st.download_button(
     label="Download data as CSV",
