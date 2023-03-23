@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 
 # Picture
 from PIL import Image
-image = Image.open('streamlit.jpg')
+image = Image.open('Streamlit.jpg')
 
 # Data cache
 @st.cache_data()
