@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import time
 
-#App config
-st.set_page_config(layout="centered")
+# App config
+st.set_page_config(layout="wide")
 
-#Data cache
+# Data cache
 @st.cache_data()
 def load_data1(file_path1):
     default_data = pd.read_csv(file_path1)
@@ -20,33 +20,33 @@ def load_data2(file_path2):
 def convert_df(df):
     return df.to_csv().encode('utf-8')
 
-#Titles
-st.header('Editable dataframes')
-st.markdown ('Made with: Streamlit 1.20 - st.experimental_data_editor')
+# Titles
+st.title('Editable Dataframes')
+st.markdown('Made with: Streamlit 1.20 - st.experimental_data_editor')
 
-#Paths
-file_path1 = "NYC_most_pop.csv"
-file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
-
-#Drop box
-option = st.selectbox('Select dataset',('Default dataset', 'Upload dataset'))
+# Select box
+option = st.selectbox('Select dataset', ('Default dataset', 'Upload dataset'))
 st.write('You selected:', option)
 
-if option == 'Default dataset':
-    data = load_data1(file_path1)
-    st.experimental_data_editor(data, num_rows="dynamic")
-    csv = convert_df(data)
-
+# Uploading box
 if option == 'Upload dataset':
-    if file_path2 is not None:
-        data = load_data2(file_path2)
-        st.experimental_data_editor(data, num_rows="dynamic")
-        csv = convert_df(data)
+    file_path2 = st.file_uploader("Select CSV file to upload", type=["csv"])
+else:
+    file_path2 = None
 
-#Download box
+# Show/hide uploading box
+if file_path2 is not None:
+    st.experimental_data_editor(load_data2(file_path2), num_rows="dynamic")
+elif option == 'Default dataset':
+    st.experimental_data_editor(load_data1("NYC_most_pop.csv"), num_rows="dynamic")
+
+# Download box
+csv = convert_df(df)
+
 st.download_button(
     label="Download data as CSV",
     data=csv,
     file_name='Your_data.csv',
     mime='text/csv',
 )
+
