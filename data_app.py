@@ -44,8 +44,6 @@ if option == 'Upload dataset':
         csv = convert_df(data)
 
 #Download box
-csv = convert_df(df)
-
 st.download_button(
     label="Download data as CSV",
     data=csv,
