@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 # Picture
 #image = Image.open('streamlit_hero.jpg')
 image = Image.open('Streamlit.png')
-st.image(image,width=100)
+st.image(image,width=200)
 
 # Data cache
 @st.cache_data()
