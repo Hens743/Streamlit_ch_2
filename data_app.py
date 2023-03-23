@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 
 # Picture
 image = Image.open('streamlit_hero.jpg')
-st.image(image)
+st.image(image,width=400)
 
 # Data cache
 @st.cache_data()
